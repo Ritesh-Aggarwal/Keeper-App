@@ -8,12 +8,12 @@ import notes from "../notes";
 function App() {
   const [list, setList] = useState(notes);
   function addItem(item) {
-    setList((prevState) => [...prevState, item]);
+    setList((prevState) => [item, ...prevState]);
   }
   function deleteItem(id){
     setList(prevState=>{
       return list.filter((item, index)=>{
-        return index != id;
+        return index !== id;
       });
     });
   }
